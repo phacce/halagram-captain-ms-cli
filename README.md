@@ -27,5 +27,5 @@ A full list of options is given below:
 
 -m User or --model User => this sets the model name
 
--f no or --folder no => this tells the app not to create the service in its own directory
+-f no or --folder no => this tells the app not to create the service in its own separate directory
 ```
