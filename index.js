@@ -1,7 +1,7 @@
 const program = require('commander');
 const fs = require('fs');
 
-var dir = '';
+var dir = ''; // the directory to save the service
 var serviceObj = {};
 
 program.arguments('<service>',)
@@ -34,12 +34,19 @@ function initVariables(service) {
     serviceObj.database = program.database || `${model}-db`;
 }
 
+/**
+ * Creates a folder in the specified path
+ * @param {String} path the folder path
+ */
 function createFolder(path){
     if (!fs.existsSync(path)) {
         fs.mkdirSync(path);
     }
 }
 
+/**
+ * Creates the index.js file for the service
+ */
 function createServiceIndexFile() {
     let template = require('./generators/index_gen')(serviceObj);
     fs.writeFile(`${dir}index.js`, template, (err) => {
@@ -48,6 +55,9 @@ function createServiceIndexFile() {
     });
 }
 
+/**
+ * Creates a controllers folder and an example controller file
+ */
 function createControllersFolder() {
     createFolder(`${dir}controllers`);
     let template = require('./generators/controllers_gen')();
@@ -57,6 +67,9 @@ function createControllersFolder() {
     });
 }
 
+/**
+ * Creates a routes folder and an example route file
+ */
 function createRoutesFolder() {
     createFolder(`${dir}routes`);
     let template = require('./generators/routes_gen')();
@@ -66,6 +79,9 @@ function createRoutesFolder() {
     });
 }
 
+/**
+ * Creates a schemas folder and an example schema file
+ */
 function createSchemasFolder() {
     createFolder(`${dir}schemas`);
     let template = require('./generators/schemas_gen')();
