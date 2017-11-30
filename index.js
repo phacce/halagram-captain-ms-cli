@@ -1,16 +1,22 @@
+#!/usr/bin/env node
 const program = require('commander');
 const fs = require('fs');
 
 var dir = ''; // the directory to save the service
 var serviceObj = {};
 
-program.arguments('<service>',)
-    .option('-p, --port <port>', 'the service port')
-    .option('-l, --logger <logger>', 'the logger tag')
-    .option('-d, --database <database>', 'the name of the database')
-    .option('-m, --model <model>', 'the model name')
-    .option('-f, --folder <folder>', 'yes to create the service in a folder, else no')
+program.arguments('<service>')
+    .version('0.2.0')
+    .option('-P, --port <port>', 'set the service port')
+    .option('-L, --logger <logger>', 'set the logger tag')
+    .option('-D, --database <database>', 'set the name of the database')
+    .option('-M, --model <model>', 'set the model name')
+    .option('-F, --folder <folder>', 'yes to create the service in a folder, else no', /(yes|no)/i)
     .action((service) => {
+
+        if (!service.match(/service$/i))
+            service = `${service}_service`;
+
         initVariables(service);
         
         if (program.folder != 'no') {
@@ -31,7 +37,7 @@ function initVariables(service) {
     serviceObj.port = program.port || 3000;
     serviceObj.loggerTag = program.logger || `${service}Tag`;
     serviceObj.model = program.model || 'User';
-    serviceObj.database = program.database || `${model}-db`;
+    serviceObj.database = program.database || `${serviceObj.model}-db`;
 }
 
 /**
@@ -90,3 +96,5 @@ function createSchemasFolder() {
         else console.log(`... schemas created ...`);
     });
 }
+
+if (serviceObj.serviceName == undefined) console.error("\x1b[31m%s\x1b[0m", 'Please type the name of Service to create with any other optional arguments')

@@ -13,6 +13,9 @@
   ],
   "author": "Ikechukwu Kalu (ikechukwuakalu@gmail.com), Bestbrain Livinus (bestbrain10@gmail.com)",
   "license": "ISC",
+  "bin": {
+     "captain-ms-cli": "./index.js"
+  },
   "dependencies": {
     "commander": "^2.12.2"
   }
