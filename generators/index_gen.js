@@ -10,7 +10,7 @@ const schema = require('./schemas/example_schema');
 /**
  * Create an app logger
  */
-let logger = new captain.Logger('${serviceObj.loggerTag}');
+let logger = new captain.Logger('${serviceObj.loggerTag}', 'development');
 
 /**
  * Create a database for the service
@@ -21,6 +21,7 @@ let db = new captain.MongoDatabase({
 
 /**
  * Create a new datasource; in this case, we use a Mongoose datasource
+ * NOTE: This instantiation also creates the database connection
  */
 let dataSource = new captain.MongooseDataSource('${serviceObj.model}', schema, db);
 
