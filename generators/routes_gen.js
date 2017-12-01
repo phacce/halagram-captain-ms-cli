@@ -11,7 +11,7 @@ const exampleController = require('../controllers/example_controller');
 /**
  * Get a list of names
  */
-router.get('/names', exampleController(repo).getNames);
+router.get('/captains', exampleController(repo).getCaptains);
 
 /**
  * Export the Router for use in the Service class

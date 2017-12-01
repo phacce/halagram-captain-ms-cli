@@ -8,7 +8,7 @@ module.exports = (repository) => {
 
     return {
 
-        getNames: (req, res, next) => {
+        getCaptains: (req, res, next) => {
             /**
              * Use the repository here to get items from your data source
              */
