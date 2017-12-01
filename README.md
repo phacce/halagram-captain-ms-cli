@@ -14,7 +14,7 @@ npm install -g @halagram/captain-ms-cli
 ```
 $ captain-ms-cli users_service [options]
 ```
-This creates a service with name 'users_service'. you can specify optional parameters to configure the Service. Ex
+This creates a service with name, 'users_service'. You can specify optional parameters to configure the Service. Ex
 ```
 $ captain-ms-cli users_service --port 3000 --M User
 ```
