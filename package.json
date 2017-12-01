@@ -1,5 +1,5 @@
 {
-  "name": "captain-ms-cli",
+  "name": "@halagram/captain-ms-cli",
   "version": "0.2.0",
   "description": "Command line tool for @halagram/captain-ms npm module",
   "main": "index.js",
@@ -9,10 +9,11 @@
   "keywords": [
     "halagram",
     "captain-ms",
+    "captain-ms-cli",
     "cli"
   ],
   "author": "Ikechukwu Kalu (ikechukwuakalu@gmail.com), Bestbrain Livinus (bestbrain10@gmail.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
      "captain-ms-cli": "./index.js"
   },

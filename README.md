@@ -1,4 +1,6 @@
 # Captain-ms CLI
+[![NPM Version](https://img.shields.io/npm/v/@halagram/captain-ms-cli.svg?style=flat)](https://www.npmjs.org/package/commander)
+[![NPM Downloads](https://img.shields.io/npm/dm/@halagram/captain-ms-cli.svg?style=flat)](https://www.npmjs.org/package/commander)
 
 This is a Command Line Interface app for the [captain-ms](https://www.npmjs.com/package/@halagram/captain-ms) NPM module. It is used to create a Service template.
 
