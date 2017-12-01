@@ -1,6 +1,6 @@
 {
   "name": "@halagram/captain-ms-cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Command line tool for @halagram/captain-ms npm module",
   "main": "index.js",
   "scripts": {
