@@ -48,7 +48,7 @@ let service = new captain.Service({
  * You can set routes for this Service multiple times
  */
 service.setRoutes({
-    '': require('./routes/example_route')
+    '': require('./routes/example_routes')
 });
 
 /**

@@ -79,7 +79,7 @@ function createControllersFolder() {
 function createRoutesFolder() {
     createFolder(`${dir}routes`);
     let template = require('./generators/routes_gen')();
-    fs.writeFile(`${dir}routes/example_route.js`, template, (err) => {
+    fs.writeFile(`${dir}routes/example_routes.js`, template, (err) => {
         if (err) console.log(`... an error occured while creating routes ...`);
         else console.log(`... routes created ...`);
     });

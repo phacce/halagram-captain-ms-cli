@@ -17,7 +17,7 @@ $ captain-ms-cli users_service [options]
 ```
 This creates a service with name, 'users_service'. You can specify optional parameters to configure the Service. Ex
 ```
-$ captain-ms-cli users_service --port 3000 --M User
+$ captain-ms-cli users_service --port 3000 -M User
 ```
 This creates a users service and then sets the default listen port to 3000 and the database model is User
 
